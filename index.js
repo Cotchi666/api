@@ -91,6 +91,6 @@ app.post("/capture/:paymentId", (req, res) => {
   }
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
   console.log("Backend server is running!");
 });
