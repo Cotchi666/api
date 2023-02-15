@@ -1,6 +1,6 @@
 
 
-const WHITELIST_DOMAIN = ['http://localhost:3000, http://localhost:3001'];
+const WHITELIST_DOMAIN = ['http://localhost:3000, http://localhost:3001,https://api-qnog.onrender.com'];
 
 const corsOptions = {
     origin: function(origin, callback) {
