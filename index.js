@@ -10,9 +10,7 @@ const listRoute = require("./routes/lists");
 const corsOptions = require('./config/domain');
 const request = require("request");
 
-const port = process.env.PORT||'8000';
 dotenv.config();
-
 
 const mongoose = require('./config/mongoDb');
 mongoose.connect();
@@ -61,10 +59,10 @@ app.post("/payment", (req, res) => {
 
 app.post("/capture/:paymentId", (req, res) => {
   try {
-    console.log(
-      "vao payment capture" ,req.body.amount
-    );
-    console.log("req paymet id", req.params.paymentId);
+    // console.log(
+    //   "vao payment capture" ,req.body.amount
+    // );
+    // console.log("req paymet id", req.params.paymentId);
     return request(
       {
         method: "POST",
@@ -74,7 +72,6 @@ app.post("/capture/:paymentId", (req, res) => {
           currency: "INR",
         },
       },
-      
       async function (error, response, body) {
         if (error) {
           console.log("req", req);
@@ -94,6 +91,6 @@ app.post("/capture/:paymentId", (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log("Backend server is running! on", port);
+app.listen(8800, () => {
+  console.log("Backend server is running!");
 });
